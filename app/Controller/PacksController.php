@@ -15,30 +15,92 @@ class PacksController extends AppController {
 
 	
 	public function addPack() { // Pack::PAGE_LIMIT ;die;
-		//pr($this->request->data);die;
-		if($this->request->data) {
-			$usernameValue =$this->request->data['UsersInfo']['username'];
-			if(!$this->UsersInfo->findByUsername($usernameValue)){
-				$this->request->data['UsersInfo']['created_date'] = date("Y-m-d H:i:s");
-				$this->request->data['UsersInfo']['updated_date'] = date("Y-m-d H:i:s");
-				$this->request->data['UsersInfo']['password'] = AuthComponent::password($this->request->data['UsersInfo']['password']);
-				if($this->UsersInfo->save($this->request->data)){
-					if(isset($this->request->data['continue'])){
-						$this->Session->setFlash('User Created. Add New One.','flash_success');
-						$this->redirect(array('action'=>'addUser'));
-					}else{
-						$this->Session->setFlash('User Created.','flash_success');
-						$this->redirect(array('action'=>'cmsUsers'));
-					}
-				}
+		if($this->request->data) { 
+			$this->request->data['Pack']['userinfo_id'] = $this->Session->read('Auth.User.id');
+			$type = $this->request->data['Pack']['type'];
+			
+			$lastPAckData = $this->Pack->find('first',array('conditions'=>array('Pack.type'=>$type),'order'=>array('Pack.id'=>'DESC'),'limit'=>'1'));
+			if(!$lastPAckData){
+				$lastId = $type. 1;
 			}else{
-				$this->Session->setFlash('Username exists, please try a different username.','flash_error');
-				$this->redirect(array('action'=>'addUser'));
+				$nextid = $lastPAckData['Pack']['id']+1;
+				$lastId = $type.$nextid;
+			}
+			$this->request->data['Pack']['pack_id'] = $lastId;
+			
+			if(isset($this->request->data['Pack']['Image'])){
+		    	//$this->admin_removeimage($this->Member->id,$this->request->data['UsersInfo']['icon_url'],'profile/big',false);
+		    	//$this->admin_removeimage($this->Member->id,$this->request->data['UsersInfo']['icon_url'],'profile/small',false);
+				if (is_uploaded_file($this->request->data['Pack']['Image']['tmp_name']))	{
+				    	$p=time();
+					$imagename = 'icon_'.$p.'_'.$this->request->data['Pack']['Image']['name'];
+					$destpath= $_SERVER['DOCUMENT_ROOT'] ."/artwork/app/webroot/img/packIcon/$imagename";
+					$imname=$this->Image->upload_image_and_thumbnail($this->request->data['Pack']['Image'],298,99,'packIcon',true,'icon_'.$p.'_');
+					move_uploaded_file($this->request->data['Pack']['Image']['tmp_name'],$destpath);
+					$this->request->data['Pack']['icon_url'] = $imagename;
+				}
+		     }else{
+		     	$this->request->data['Pack']['icon_url'] = '';
+		     }
+		    
+			 if(isset($this->request->data['Pack']['Detail_Image'])){
+		    	//$this->admin_removeimage($this->Member->id,$this->request->data['UsersInfo']['icon_url'],'profile/big',false);
+		    	//$this->admin_removeimage($this->Member->id,$this->request->data['UsersInfo']['icon_url'],'profile/small',false);
+				if (is_uploaded_file($this->request->data['Pack']['Detail_Image']['tmp_name']))	{
+				    	$p=time();
+					$imagename = 'icon_'.$p.'_'.$this->request->data['Pack']['Detail_Image']['name'];
+					$destpath= $_SERVER['DOCUMENT_ROOT'] ."/artwork/app/webroot/img/packImage/$imagename";
+					$imname=$this->Image->upload_image_and_thumbnail($this->request->data['Pack']['Detail_Image'],298,99,'packImage',true,'icon_'.$p.'_');
+					move_uploaded_file($this->request->data['Pack']['Detail_Image']['tmp_name'],$destpath);
+					$this->request->data['Pack']['detail_image_url'] = $imagename;
+				}else{
+					$this->request->data['Pack']['detail_image_url'] = '';
+				}
+		    }
+		    
+			if(!empty($lastId)) { 
+				$this->request->data['Pack']['created_date'] = date("Y-m-d H:i:s");
+				$this->request->data['Pack']['updated_date'] = date("Y-m-d H:i:s");
+				//pr($this->request->data);die;
+				if($this->Pack->save($this->request->data)){
+					if(isset($this->request->data['continue'])){
+						$this->Session->setFlash('New Pack created. Add another.','flash_success');
+						$this->redirect(array('action'=>'addPack'));
+					}else{
+						$this->Session->setFlash('New Pack created.','flash_success');
+						$this->redirect(array('action'=>'managePack'));
+					}
+				}else{
+					$this->Session->setFlash('Pack did not create. Please try again!!.','flash_error');
+					$this->redirect(array('action'=>'addUser'));
+				}
 			}
 			
 		}
+		
 	}
 	
+	public function removememimage($id){
+			$this->autoRender=false;
+			$logo=$this->Pack->findById($id);
+			$imgname='';
+				if(!empty($logo['Pack']['logo'])){
+				$imgname=$logo['Pack']['logo'];
+				}
+			if(!empty($id) && !empty($imgname)){
+				$folderName='packIcon/big';
+				$file = new File(WWW_ROOT.'img/'.$folderName."/".$imgname);
+				$file->delete();
+				$folderName='packIcon/small';
+				$file1 = new File(WWW_ROOT.'img/'.$folderName."/".$imgname);
+				$file1->delete();
+				$this->Pack->id=$id;
+				$data['Pack']['icon_url']='';
+				$this->Pack->save($data);
+				$this->redirect($this->referer());
+			}
+			
+		}
 	//ajax check user name
 	function UsernameAvailibiltyCheck() {
 		/* RECEIVE VALUE */

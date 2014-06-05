@@ -340,11 +340,11 @@ a {
 	display: block;
 	width: 100%;
 	min-height: 100%;
+	 min-width: 840px;
 }
 
 .layout_product {
 	overflow: hidden;
-	  margin-bottom: 30px;
 	padding: 10px 20px 20px;
 }
 
@@ -484,12 +484,13 @@ a {
 }
 
 #wrapper_product .footer_product {
-	background: #1a1a1a;
+	/*background: #1a1a1a;
 	margin-top: 10px;
 	bottom: 0;
 	height: 57px;
 	position: fixed;
-	width: 100%;
+	width: 100%;*/
+	margin-left:10px;
 }
 
 .footer_product button, .footer_product .link-button{
@@ -809,7 +810,7 @@ height: 18px;
 	margin-left: 20px;
 	float: right;
 	text-align: left;
-	width: 435px;
+	width: 425px;
 	padding-top: 6px;
 }
 
@@ -836,4 +837,20 @@ small {
     color: #888887;
     font: italic 11px/15px Georgia,"Times New Roman",Times,serif;
 }
-/****************Styling For Flash message Ends Here**************//************** Styling For Sub Menu*****************************/#title-bar {  background-color: #e6e6e6;  margin-top: 1px;  -moz-border-radius-bottomleft: 3px;  -webkit-border-bottom-left-radius: 3px;  border-radius-bottomleft: 3px;  -moz-border-radius-bottomright: 3px;  -webkit-border-bottom-right-radius: 3px;  border-radius-bottomright: 3px;  padding-left: 28px;  padding-right: 4px;   margin-bottom: 5px;}#title-bar h1 {  font-size: 12px;  display: inline-block;  padding: 13px 10px 11px 10px;  text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0;  font-weight: bold;}#title-bar h1 a { text-decoration: underline; }#actions {  display: inline-block;  overflow: hidden;  float: right !important;}#actions li { float: right !important; }#actions li a {  display: block;  padding: 13px 10px 11px 10px;  margin-left: 1px;  color: #5a5b5e;}ul#actions li span {  display: block;  padding: 13px 10px 11px 10px;  margin-left: 1px;  color: #5a5b5e;}#actions li span { color: #888887; }#actions li a { text-decoration: underline; }#actions li a:hover { color: #333333; }#secondary-navigation { overflow: hidden; list-style: none;}#secondary-navigation li { float: left !important; }#secondary-navigation li a {  display: block;  padding: 13px 10px 11px 10px;  font-weight: bold;  margin-right: 1px;  color: #888887;  font-size: 12px;  text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0;}#secondary-navigation li a:hover { color: #5a5b5e; }#secondary-navigation li a:active { color: #333333; }#secondary-navigation li a.on {  color: #333333;  border-bottom: 5px solid #333333;  padding-bottom: 6px;}/************** Styling For Sub Menu End Here *****************************/
+
+.footer-border{
+    border-top: 5px solid #888887;
+    margin: 50px auto 0px;
+    width: 97%;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+
+
+
+/****************Styling For Flash message Ends Here**************//************** Styling For Sub Menu*****************************/#title-bar {  background-color: #e6e6e6;  margin-top: 1px;  -moz-border-radius-bottomleft: 3px;  -webkit-border-bottom-left-radius: 3px;  border-radius-bottomleft: 3px;  -moz-border-radius-bottomright: 3px;  -webkit-border-bottom-right-radius: 3px;  border-radius-bottomright: 3px;  padding-left: 28px;  padding-right: 4px;   margin-bottom: 5px;}#title-bar h1 {  font-size: 12px;  display: inline-block;  padding: 13px 10px 11px 10px;  text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0;  font-weight: bold;}#title-bar h1 a { text-decoration: underline; }#actions {  display: inline-block;  overflow: hidden;  float: right !important;}#actions li { float: right !important; }#actions li a {  display: block;  padding: 13px 10px 11px 10px;  margin-left: 1px;  color: #5a5b5e;}ul#actions li span {  display: block;  padding: 13px 10px 11px 10px;  margin-left: 1px;  color: #5a5b5e;}#actions li span { color: #888887; }#actions li a { text-decoration: underline; }#actions li a:hover { color: #333333; }#secondary-navigation { overflow: hidden; list-style: none;}#secondary-navigation li { float: left !important; }#secondary-navigation li a {  display: block;  padding: 13px 10px 11px 10px;  font-weight: bold;  margin-right: 1px;  color: #888887;  font-size: 12px;  text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0;}#secondary-navigation li a:hover { color: #5a5b5e; }#secondary-navigation li a:active { color: #333333; }#secondary-navigation li a.on {  color: #333333;  border-bottom: 5px solid #333333;  padding-bottom: 6px;}
+
+
+
+/************** Styling For Sub Menu End Here *****************************/

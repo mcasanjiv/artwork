@@ -59,7 +59,7 @@ echo $this->Html->script('jquery.validationEngine-en.js');
 <div id="header"><?php echo $this->element('admin_header');?></div>
 <div id="content"><?php echo $this->Session->flash(); ?> <?php echo $this->fetch('content'); ?>
 </div>
-<div id="footer"><?php //echo $this->element('admin_footer');?></div>
+<div id="footer"><?php echo $this->element('admin_footer');?></div>
 </div>
 <?php //echo $this->element('sql_dump'); ?>
 <?php echo $this->Js->writeBuffer(); ?>
