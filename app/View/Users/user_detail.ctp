@@ -1,3 +1,4 @@
+<?php echo $this->element('users_submenu')?>
 <script type="text/javascript">
 $(document).ready(function(){
 	$('#UsersInfoUserDetailForm').validationEngine({promptPosition : 'topRight'});
@@ -40,7 +41,9 @@ echo $this->Form->select('status',$options,array('empty'=>false));
 </div>
 
 <div class="footer_product">
-<?php echo $this->Form->submit('Edit');?> <?php echo $this->Form->end();?>
+<?php echo $this->Form->submit('Edit');?> 
 <span class="link-button"><?php echo $this->Html->link('Reset Password','resetPassword/'.$this->params['pass'][0]) ?></span>
+<div class="clear"></div>
+<?php echo $this->Form->end();?>
 </div>
 </div>

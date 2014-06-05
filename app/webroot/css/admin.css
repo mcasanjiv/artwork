@@ -241,7 +241,7 @@ a {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 	overflow: hidden;
 	width: 100%;
-	background: #fff;
+	background: #333333;
 	clear: both;
 	color: #000;
 }
@@ -849,7 +849,23 @@ small {
 
 
 
-/****************Styling For Flash message Ends Here**************//************** Styling For Sub Menu*****************************/#title-bar {  background-color: #e6e6e6;  margin-top: 1px;  -moz-border-radius-bottomleft: 3px;  -webkit-border-bottom-left-radius: 3px;  border-radius-bottomleft: 3px;  -moz-border-radius-bottomright: 3px;  -webkit-border-bottom-right-radius: 3px;  border-radius-bottomright: 3px;  padding-left: 28px;  padding-right: 4px;   margin-bottom: 5px;}#title-bar h1 {  font-size: 12px;  display: inline-block;  padding: 13px 10px 11px 10px;  text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0;  font-weight: bold;}#title-bar h1 a { text-decoration: underline; }#actions {  display: inline-block;  overflow: hidden;  float: right !important;}#actions li { float: right !important; }#actions li a {  display: block;  padding: 13px 10px 11px 10px;  margin-left: 1px;  color: #5a5b5e;}ul#actions li span {  display: block;  padding: 13px 10px 11px 10px;  margin-left: 1px;  color: #5a5b5e;}#actions li span { color: #888887; }#actions li a { text-decoration: underline; }#actions li a:hover { color: #333333; }#secondary-navigation { overflow: hidden; list-style: none;}#secondary-navigation li { float: left !important; }#secondary-navigation li a {  display: block;  padding: 13px 10px 11px 10px;  font-weight: bold;  margin-right: 1px;  color: #888887;  font-size: 12px;  text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0;}#secondary-navigation li a:hover { color: #5a5b5e; }#secondary-navigation li a:active { color: #333333; }#secondary-navigation li a.on {  color: #333333;  border-bottom: 5px solid #333333;  padding-bottom: 6px;}
+/****************Styling For Flash message Ends Here**************//************** Styling For Sub Menu*****************************/
+#title-bar {  background-color: #e6e6e6;  margin-top: 1px;  -moz-border-radius-bottomleft: 3px;  -webkit-border-bottom-left-radius: 3px;  border-radius-bottomleft: 3px;  -moz-border-radius-bottomright: 3px;  -webkit-border-bottom-right-radius: 3px;  border-radius-bottomright: 3px;  padding-left: 28px;  padding-right: 4px;   margin-bottom: 5px;}
+#title-bar h1 {  font-size: 12px;  display: inline-block;  padding: 13px 10px 11px 10px;  text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0;  font-weight: bold;}
+#title-bar h1 a { text-decoration: underline; }
+#actions {  display: inline-block;  overflow: hidden;  float: right !important;}
+#actions li { float: right !important; }
+#actions li a {  display: block;  padding: 13px 10px 11px 10px;  margin-left: 1px;  color: #5a5b5e;}
+ul#actions li span {  display: block;  padding: 13px 10px 11px 10px;  margin-left: 1px;  color: #5a5b5e;}
+#actions li span { color: #888887; }
+#actions li a { text-decoration: underline; }
+#actions li a:hover { color: #333333; }
+#secondary-navigation { overflow: hidden; list-style: none;}
+#secondary-navigation li { float: left !important; }
+#secondary-navigation li a {  display: block;  padding: 13px 10px 11px 10px;  font-weight: bold;  margin-right: 1px;  color: #888887;  font-size: 12px;  text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0;}
+#secondary-navigation li a:hover { color: #5a5b5e; }
+#secondary-navigation li a:active { color: #333333; }
+#secondary-navigation li a.on {  color: #333333;  border-bottom: 5px solid #333333;  padding-bottom: 6px;}
 
 
 

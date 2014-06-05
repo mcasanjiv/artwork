@@ -26,9 +26,13 @@ $(document).ready(function(){
 	<?php echo $this->Form->select('type',$this->UserInfo->packIds,array('empty'=>false));?>
 	</div>
 	
-	<div class="td"><label for="Status">Local</label> 
-	<?php echo $this->Form->select('local_lang',$this->UserInfo->localLang,array('empty'=>false));?>
-	<?php  echo $this->Form->input('is_en',array('type'=>'checkbox','label'=>'EN '));?>
+	<div class="td">
+		<label for="Status">Local</label> 
+		<div>
+			<label for="Status">EN</label>
+			<?php  echo $this->Form->input('is_en',array('type'=>'checkbox','label'=>false,'div'=>false));?>
+			<?php echo $this->Form->select('local_lang',$this->UserInfo->localLang,array('empty'=>false));?>
+		</div>
 	</div>
 	
 	<div class="td"><?php echo $this->Form->input('title',array('class'=>'validate[required]'));?>

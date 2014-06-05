@@ -1,3 +1,4 @@
+<?php echo $this->element('users_submenu')?>
 <script type="text/javascript">
 
 $(document).ready(function(){
