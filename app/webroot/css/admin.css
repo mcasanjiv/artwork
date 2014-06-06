@@ -866,6 +866,10 @@ ul#actions li span {  display: block;  padding: 13px 10px 11px 10px;  margin-lef
 #secondary-navigation li a:hover { color: #5a5b5e; }
 #secondary-navigation li a:active { color: #333333; }
 #secondary-navigation li a.on {  color: #333333;  border-bottom: 5px solid #333333;  padding-bottom: 6px;}
+#main_navigation li.on a {
+    background-color: #FFFFFF;
+    color: #333333;
+}
 
 
 
